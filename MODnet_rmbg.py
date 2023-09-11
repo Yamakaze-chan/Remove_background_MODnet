@@ -68,22 +68,25 @@ file_path = filedialog.askopenfilename()
 
 #Move image for MODnet
 ##use original image
-os.replace(file_path, "./MODnet/demo/image_matting/colab/input/1.jpg")
+os.replace(file_path, "demo/image_matting/colab/input/1.jpg")
 ##Pre-processing image
 #image = Image.open(file_path)
 #image = ImageEnhance.Sharpness(image).enhance(1.3)
 #image.save("./MODnet/demo/image_matting/colab/input/1.jpg")
 
 #Run MODnet
-subprocess.call(['sh', './MODnet/run_MODnet.sh'])
+subprocess.call(['sh', 'run_MODnet.sh'])
 
-input_folder = "./MODnet/demo/image_matting/colab/input"
-output_folder = "./MODnet/demo/image_matting/colab/output"
+input_folder = "demo/image_matting/colab/input"
+output_folder = "demo/image_matting/colab/output"
 image_names = os.listdir(input_folder)
 for image_name in image_names:
   matte_name = image_name.split('.')[0] + '.png'
   image = Image.open(os.path.join(input_folder, image_name))
   matte = Image.open(os.path.join(output_folder, matte_name)).convert('L')
   im = combined_display(image, matte)
+  #Save image after remove background (Optional)
+  #save_path = ""
+  #im.save(save_path)
   im.show()
-  print(image_name, '\n')
+  print("DONE!")
