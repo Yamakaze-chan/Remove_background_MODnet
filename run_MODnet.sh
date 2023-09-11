@@ -1,2 +1,1 @@
-cd MODnet
 python -m demo.image_matting.colab.inference --input-path demo/image_matting/colab/input --output-path demo/image_matting/colab/output --ckpt-path ./pretrained/modnet_photographic_portrait_matting.ckpt
