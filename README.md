@@ -1,5 +1,5 @@
 # Remove_background_MODnet
-Remove background with MODnet
+Remove background with MODnet \- (Based on paper "MODNet: Real-Time Trimap-Free Portrait Matting via Objective Decomposition (AAAI 2022)")
 
 This is a modify version of MODnet \- [https://github\.com/ZHKKKe/MODNet/tree/master](https://github.com/ZHKKKe/MODNet/tree/master)
 
